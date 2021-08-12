@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Feather from 'react-native-vector-icons/Feather';
 
 import HomeScreen from './src/screens/HomeScreen';
 
@@ -13,7 +14,7 @@ function MyTabs() {
     <Tab.Navigator
       initialRouteName="Chào bạn mới"
       screenOptions={{
-        tabBarActiveTintColor: 'black',
+        tabBarActiveTintColor: 'orange',
       }}>
       <Tab.Screen
         name="Chào bạn mới"
@@ -21,7 +22,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Trang chủ',
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <Feather name="home" color={color} size={size}></Feather>
           ),
         }}
       />
@@ -31,10 +32,11 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Đặt hàng',
           tabBarIcon: ({color, size}) => (
-            <MaterialIcons
-              name="search"
-              color={color}
-              size={size}></MaterialIcons>
+            <Feather name="coffee" color={color} size={size}></Feather>
+            // <MaterialIcons
+            //   name="search"
+            //   color={color}
+            //   size={size}></MaterialIcons>
           ),
         }}
       />
@@ -42,9 +44,13 @@ function MyTabs() {
         name="Cửa hàng"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Wishlist',
+          tabBarLabel: 'Cửa hàng',
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="heart" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="storefront-outline"
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
@@ -54,10 +60,23 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Tích điểm',
           tabBarIcon: ({color, size}) => (
-            <MaterialIcons
-              name="shopping-bag"
+            <MaterialCommunityIcons
+              name="ticket-percent-outline"
               color={color}
-              size={size}></MaterialIcons>
+              size={size}></MaterialCommunityIcons>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Khác"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Khác',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons
+              name="ticket-percent-outline"
+              color={color}
+              size={size}></MaterialCommunityIcons>
           ),
         }}
       />
