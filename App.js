@@ -33,10 +33,6 @@ function MyTabs() {
           tabBarLabel: 'Đặt hàng',
           tabBarIcon: ({color, size}) => (
             <Feather name="coffee" color={color} size={size}></Feather>
-            // <MaterialIcons
-            //   name="search"
-            //   color={color}
-            //   size={size}></MaterialIcons>
           ),
         }}
       />
