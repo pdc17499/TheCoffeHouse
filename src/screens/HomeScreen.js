@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 import {SliderBox} from 'react-native-image-slider-box';
 
@@ -57,7 +58,6 @@ const HomeScreen = () => {
           <Text>Mang đi</Text>
         </View>
       </View>
-
       <SliderBox
         images={[
           require('../images/01.webp'),
@@ -77,7 +77,6 @@ const HomeScreen = () => {
           margin: 0,
         }}
       />
-
       <View style={{marginTop: 20, marginLeft: 20, flexDirection: 'row'}}>
         <Text style={{fontWeight: 'bold', marginRight: 10, fontSize: 18}}>
           Khám phá thêm{' '}
@@ -96,7 +95,6 @@ const HomeScreen = () => {
           name={'star-four-points'}
           size={14}></MaterialCommunityIcons>
       </View>
-
       <View style={{flexDirection: 'row', marginVertical: 15, marginLeft: 20}}>
         <View
           style={{
@@ -135,20 +133,92 @@ const HomeScreen = () => {
         </View>
       </View>
 
-      <View style={{flexDirection: 'row'}}>
-        <Image style={styles.image1} source={require('../images/02.webp')} />
-        <Image style={styles.image2} source={require('../images/05.webp')} />
+      {/* Start 2 image */}
+
+      <View style={{flexDirection: 'row', marginRight: 15}}>
+        <View style={styles.image0}>
+          <Image style={styles.image1} source={require('../images/03.webp')} />
+          <View>
+            <Text style={styles.title}>
+              Ưu Đãi Tháng 8, Nhập Mã Giảm Giá CPG10
+            </Text>
+            <View style={{flexDirection: 'row', marginTop: 5}}>
+              <EvilIcons name={'calendar'} size={30}></EvilIcons>
+              <Text style={{marginLeft: 10, alignSelf: 'center'}}>18/08</Text>
+            </View>
+          </View>
+        </View>
+        <View style={styles.image0}>
+          <Image style={styles.image2} source={require('../images/05.webp')} />
+          <View>
+            <Text style={styles.title}>Thất Tịch Có Đôi, Nhà Mời Một Nửa</Text>
+            <View style={{flexDirection: 'row', marginTop: 5}}>
+              <EvilIcons name={'calendar'} size={30}></EvilIcons>
+              <Text style={{marginLeft: 10, alignSelf: 'center'}}>20/08</Text>
+            </View>
+          </View>
+        </View>
       </View>
 
-      <View style={{flexDirection: 'row'}}>
-        <Image style={styles.image1} source={require('../images/06.webp')} />
-        <Image style={styles.image2} source={require('../images/07.webp')} />
+      {/* End of 2 image */}
+
+      {/* Start 2 image */}
+
+      <View style={{flexDirection: 'row', marginRight: 15}}>
+        <View style={styles.image0}>
+          <Image style={styles.image1} source={require('../images/08.webp')} />
+          <View>
+            <Text style={styles.title}>
+              Ưu Đãi Tháng 9, Nhập Mã Giảm Giá CPG09
+            </Text>
+            <View style={{flexDirection: 'row', marginTop: 5}}>
+              <EvilIcons name={'calendar'} size={30}></EvilIcons>
+              <Text style={{marginLeft: 10, alignSelf: 'center'}}>15/09</Text>
+            </View>
+          </View>
+        </View>
+        <View style={styles.image0}>
+          <Image style={styles.image2} source={require('../images/09.webp')} />
+          <View>
+            <Text style={styles.title}>Măm Măm Bánh Ngon - Giá Còn 1 Nửa</Text>
+            <View style={{flexDirection: 'row', marginTop: 5}}>
+              <EvilIcons name={'calendar'} size={30}></EvilIcons>
+              <Text style={{marginLeft: 10, alignSelf: 'center'}}>22/09</Text>
+            </View>
+          </View>
+        </View>
       </View>
 
-      <View style={{flexDirection: 'row'}}>
-        <Image style={styles.image1} source={require('../images/08.webp')} />
-        <Image style={styles.image2} source={require('../images/09.webp')} />
+      {/* End of 2 image */}
+
+      {/* Start 2 image */}
+
+      <View style={{flexDirection: 'row', marginRight: 15}}>
+        <View style={styles.image0}>
+          <Image style={styles.image1} source={require('../images/06.webp')} />
+          <View>
+            <Text style={styles.title}>
+              Cuối Tháng Vẫn Vui Vẻ, DEAL 40% Từ Nhà!
+            </Text>
+            <View style={{flexDirection: 'row', marginTop: 5}}>
+              <EvilIcons name={'calendar'} size={30}></EvilIcons>
+              <Text style={{marginLeft: 10, alignSelf: 'center'}}>17/09</Text>
+            </View>
+          </View>
+        </View>
+        <View style={styles.image0}>
+          <Image style={styles.image2} source={require('../images/07.webp')} />
+          <View>
+            <Text style={styles.title}>Ở Nhà Vui Khỏe - Gọi Món Tận Nơi</Text>
+            <View style={{flexDirection: 'row', marginTop: 5}}>
+              <EvilIcons name={'calendar'} size={30}></EvilIcons>
+              <Text style={{marginLeft: 10, alignSelf: 'center'}}>22/12</Text>
+            </View>
+          </View>
+        </View>
       </View>
+
+      {/* End of 2 image */}
     </ScrollView>
   );
 };
@@ -163,7 +233,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginVertical: 15,
     alignItems: 'center',
-
     flexDirection: 'row',
     borderWidth: 1,
     borderColor: 'gray',
@@ -174,22 +243,31 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 70,
   },
-  image1: {
-    height: 200,
+
+  image0: {
+    height: 280,
     width: itemWidth,
     marginLeft: 15,
-    marginRight: 15,
+    marginBottom: 5,
+    flex: 1,
+  },
+
+  image1: {
+    height: 200,
+    width: '100%',
     marginVertical: 5,
     borderRadius: 15,
-
-    flex: 1,
   },
   image2: {
     borderRadius: 15,
     height: 200,
-    width: itemWidth,
+    width: '100%',
     marginRight: 15,
     marginVertical: 5,
-    flex: 1,
+  },
+
+  title: {
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 });

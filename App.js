@@ -6,6 +6,8 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 
 import HomeScreen from './src/screens/HomeScreen';
+import OrderScreen from './src/screens/OrderScreen';
+import OtherScreen from './src/screens/OtherScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,8 +29,8 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Shop"
-        component={HomeScreen}
+        name="Order"
+        component={OrderScreen}
         options={{
           tabBarLabel: 'Đặt hàng',
           tabBarIcon: ({color, size}) => (
@@ -65,7 +67,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Khác"
-        component={HomeScreen}
+        component={OtherScreen}
         options={{
           tabBarLabel: 'Khác',
           tabBarIcon: ({color, size}) => (
