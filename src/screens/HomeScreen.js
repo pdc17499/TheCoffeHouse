@@ -193,7 +193,7 @@ const HomeScreen = () => {
 
       {/* Start 2 image */}
 
-      <View style={{flexDirection: 'row', marginRight: 15}}>
+      <View style={{flexDirection: 'row', marginRight: 15, marginBottom: 15}}>
         <View style={styles.image0}>
           <Image style={styles.image1} source={require('../images/06.webp')} />
           <View>
@@ -231,7 +231,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 15,
-    marginVertical: 15,
+    marginVertical: 20,
     alignItems: 'center',
     flexDirection: 'row',
     borderWidth: 1,

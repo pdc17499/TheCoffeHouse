@@ -2,8 +2,9 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from './src/screens/HomeScreen';
 import OrderScreen from './src/screens/OrderScreen';
@@ -24,7 +25,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Trang chủ',
           tabBarIcon: ({color, size}) => (
-            <Feather name="home" color={color} size={size}></Feather>
+            <AntDesign name="home" color={color} size={size}></AntDesign>
           ),
         }}
       />
@@ -71,10 +72,10 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Khác',
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons
-              name="ticket-percent-outline"
+            <Ionicons
+              name="ios-reorder-three"
               color={color}
-              size={size}></MaterialCommunityIcons>
+              size={size}></Ionicons>
           ),
         }}
       />
