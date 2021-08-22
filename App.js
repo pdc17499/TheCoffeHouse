@@ -24,6 +24,7 @@ function MyTabs() {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Trang chủ',
+
           tabBarIcon: ({color, size}) => (
             <AntDesign name="home" color={color} size={size}></AntDesign>
           ),
