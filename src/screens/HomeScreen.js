@@ -104,7 +104,8 @@ const HomeScreen = () => {
             alignItems: 'center',
             justifyContent: 'center',
             marginRight: 5,
-            backgroundColor: '#CFCFCF',
+            borderColor: '#E8E8E8',
+            backgroundColor: '#E8E8E8',
             width: 120,
           }}>
           <Text style={{color: 'orange', fontWeight: 'bold'}}>

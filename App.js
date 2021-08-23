@@ -9,6 +9,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './src/screens/HomeScreen';
 import OrderScreen from './src/screens/OrderScreen';
 import OtherScreen from './src/screens/OtherScreen';
+import StoreScreen from './src/screens/StoreScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -42,7 +43,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Cửa hàng"
-        component={HomeScreen}
+        component={StoreScreen}
         options={{
           tabBarLabel: 'Cửa hàng',
           tabBarIcon: ({color, size}) => (

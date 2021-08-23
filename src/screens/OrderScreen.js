@@ -115,9 +115,13 @@ const OrderScreen = () => {
   };
   const [text, onChangeText] = useState('Đá Xay - Chocolate - Matcha');
   return (
-    <SafeAreaView
-      style={{marginHorizontal: 15, backgroundColor: 'grey ', flex: 1}}>
-      <View style={{flexDirection: 'row', marginVertical: 15}}>
+    <SafeAreaView style={{backgroundColor: '#FFFAF0', flex: 1}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          marginVertical: 15,
+          marginHorizontal: 15,
+        }}>
         <View style={styles.search}>
           <TextInput
             style={styles.input}
@@ -153,7 +157,9 @@ const OrderScreen = () => {
           flex: 1,
         }}
       />
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{marginHorizontal: 15}}>
         <View>
           <Text style={{fontSize: 18, fontWeight: 'bold', marginVertical: 10}}>
             Đá Xay - Chocolate - Matcha
