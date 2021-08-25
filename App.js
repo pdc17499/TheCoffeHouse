@@ -10,6 +10,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import OrderScreen from './src/screens/OrderScreen';
 import OtherScreen from './src/screens/OtherScreen';
 import StoreScreen from './src/screens/StoreScreen';
+import PointScreen from './src/screens/PointScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -57,7 +58,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Bag"
-        component={HomeScreen}
+        component={PointScreen}
         options={{
           tabBarLabel: 'Tích điểm',
           tabBarIcon: ({color, size}) => (
