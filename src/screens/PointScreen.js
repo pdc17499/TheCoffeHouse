@@ -28,6 +28,7 @@ const PointScreen = () => {
             borderColor: '#E8E8E8',
             backgroundColor: '#E8E8E8',
             width: 120,
+            marginTop: 5,
           }}>
           <Text style={{color: 'orange', fontWeight: 'bold'}}>Tích điểm</Text>
         </View>
@@ -38,8 +39,11 @@ const PointScreen = () => {
             alignItems: 'center',
             justifyContent: 'center',
             marginRight: 5,
+            marginTop: 5,
           }}>
-          <Text style={{fontWeight: 'bold'}}>Đổi ưu đãi</Text>
+          <Text style={{fontWeight: 'bold', alignSelf: 'center'}}>
+            Đổi ưu đãi
+          </Text>
         </View>
       </View>
       <ScrollView style={{backgroundColor: '#FFFAF0'}}>

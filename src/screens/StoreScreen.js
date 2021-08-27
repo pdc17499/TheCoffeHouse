@@ -94,7 +94,7 @@ const StoreScreen = () => {
       <View
         style={{
           flexDirection: 'row',
-          marginVertical: 15,
+          marginVertical: 10,
           marginHorizontal: 15,
         }}>
         <View style={styles.search}>

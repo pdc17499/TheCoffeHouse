@@ -12,6 +12,12 @@ import OtherScreen from './src/screens/OtherScreen';
 import StoreScreen from './src/screens/StoreScreen';
 import PointScreen from './src/screens/PointScreen';
 
+import HomeHeader from './src/components/HomeHeader';
+import StoreHeader from './src/components/StoreHeader';
+import PointHeader from './src/components/PointHeader';
+import OtherHeader from './src/components/OtherHeader';
+import OrderHeader from './src/components/OrderHeader';
+
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -26,16 +32,17 @@ function MyTabs() {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Trang chủ',
-
           tabBarIcon: ({color, size}) => (
             <AntDesign name="home" color={color} size={size}></AntDesign>
           ),
+          headerTitle: props => <HomeHeader {...props} />,
         }}
       />
       <Tab.Screen
         name="Order"
         component={OrderScreen}
         options={{
+          headerTitle: props => <OrderHeader {...props} />,
           tabBarLabel: 'Đặt hàng',
           tabBarIcon: ({color, size}) => (
             <Feather name="coffee" color={color} size={size}></Feather>
@@ -46,6 +53,7 @@ function MyTabs() {
         name="Cửa hàng"
         component={StoreScreen}
         options={{
+          headerTitle: props => <StoreHeader {...props} />,
           tabBarLabel: 'Cửa hàng',
           tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcons
@@ -60,6 +68,7 @@ function MyTabs() {
         name="Bag"
         component={PointScreen}
         options={{
+          headerTitle: props => <PointHeader {...props} />,
           tabBarLabel: 'Tích điểm',
           tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcons
@@ -73,6 +82,7 @@ function MyTabs() {
         name="Khác"
         component={OtherScreen}
         options={{
+          headerTitle: props => <OtherHeader {...props} />,
           tabBarLabel: 'Khác',
           tabBarIcon: ({color, size}) => (
             <Ionicons
