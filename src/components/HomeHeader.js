@@ -13,7 +13,7 @@ const HomeHeader = () => {
           width: '55%',
         }}>
         <FontAwesome5 name={'cloud-moon'} size={25}></FontAwesome5>
-        <Text style={{fontWeight: 'bold', marginLeft: 15, fontSize: 16}}>
+        <Text style={{fontWeight: 'bold', marginLeft: 10, fontSize: 16}}>
           Chào buổi tối, Phúc
         </Text>
       </View>
