@@ -17,6 +17,7 @@ import StoreHeader from './src/components/StoreHeader';
 import PointHeader from './src/components/PointHeader';
 import OtherHeader from './src/components/OtherHeader';
 import OrderHeader from './src/components/OrderHeader';
+import SignInScreen from './src/screens/SignInScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -84,6 +85,20 @@ function MyTabs() {
         options={{
           headerTitle: props => <OtherHeader {...props} />,
           tabBarLabel: 'Khác',
+          tabBarIcon: ({color, size}) => (
+            <Ionicons
+              name="ios-reorder-three"
+              color={color}
+              size={size}></Ionicons>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="SignIN"
+        component={SignInScreen}
+        options={{
+          headerTitle: props => <OtherHeader {...props} />,
+          tabBarLabel: 'sign',
           tabBarIcon: ({color, size}) => (
             <Ionicons
               name="ios-reorder-three"

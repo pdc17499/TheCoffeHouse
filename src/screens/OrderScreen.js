@@ -60,7 +60,7 @@ const OrderScreen = () => {
     const callGetProductList = async () => {
       try {
         const response = await getProductList();
-        console.log('rs', response.data.data); // data tu api tra ve
+
         setProduct(response.data.data);
       } catch (error) {
         console.error(error);
