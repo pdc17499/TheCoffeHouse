@@ -6,12 +6,41 @@ import {
   View,
   Image,
   SafeAreaView,
+  TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 import {useState} from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import {login} from '../services/Api';
+import Modal from 'react-native-modal';
 
-const SignInScreen = () => {
-  const [text, onChangeText] = useState('');
+const SignInScreen = ({navigation}) => {
+  const [phone, setPhone] = useState();
+  const [code, setCode] = useState();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const onChangePhone = val => setPhone(val);
+  const onChangeCode = val => setCode(val);
+  const onVerifyPhone = async () => {
+    try {
+      const response = await login({phone: phone});
+      setIsVisible(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const onVerifyCode = async () => {
+    try {
+      const response = await login({phone: phone, otp: code});
+      setIsVisible(false);
+      navigation.navigate('Other');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
       <Image
@@ -40,14 +69,15 @@ const SignInScreen = () => {
           </Text>
           <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value={text}
+            onChangeText={onChangePhone}
+            value={phone}
             placeholder="Nhập số điện thoại"
             keyboardType="numeric"
           />
         </View>
 
-        <View
+        <TouchableOpacity
+          onPress={onVerifyPhone}
           style={{
             height: 50,
             width: '100%',
@@ -60,7 +90,72 @@ const SignInScreen = () => {
             marginBottom: 10,
           }}>
           <Text style={{color: 'white', fontSize: 16}}>Đăng nhập</Text>
-        </View>
+        </TouchableOpacity>
+
+        <Modal
+          testID={'modal'}
+          isVisible={isVisible}
+          onSwipeComplete={() => setIsVisible(false)}
+          swipeDirection={['up', 'left', 'right', 'down']}
+          style={styles.view}>
+          <View style={styles.modal}>
+            <TouchableOpacity onPress={() => setIsVisible(false)}>
+              <EvilIcons
+                name={'close'}
+                size={30}
+                style={{alignSelf: 'flex-end'}}></EvilIcons>
+            </TouchableOpacity>
+            <Text
+              style={{
+                alignSelf: 'center',
+                fontSize: 18,
+                fontWeight: 'bold',
+                marginTop: 20,
+              }}>
+              {' '}
+              Nhập mã xác thực{' '}
+            </Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                borderWidth: 1,
+                backgroundColor: 'white',
+                borderColor: '#B5B5B5',
+                borderRadius: 10,
+                width: '100%',
+                paddingLeft: 15,
+                height: 50,
+                marginVertical: 15,
+              }}>
+              <TextInput
+                style={styles.input}
+                onChangeText={onChangeCode}
+                value={code}
+                placeholder="Nhập số code"
+                keyboardType="numeric"
+              />
+            </View>
+
+            <TouchableOpacity
+              onPress={onVerifyCode}
+              style={{
+                height: 50,
+                width: '100%',
+                borderWidth: 1,
+                backgroundColor: '#B5B5B5',
+                borderColor: '#B5B5B5',
+                borderRadius: 10,
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginBottom: 10,
+              }}>
+              <Text style={{color: 'white', fontSize: 16}}>Send Code</Text>
+            </TouchableOpacity>
+          </View>
+          {/* <DefaultModalContent onPress={this.close} /> */}
+        </Modal>
+
         <View
           style={{
             flexDirection: 'row',
@@ -141,6 +236,14 @@ const SignInScreen = () => {
 export default SignInScreen;
 
 const styles = StyleSheet.create({
+  modal: {
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    padding: 20,
+    height: 400,
+    backgroundColor: 'white',
+  },
+
   input: {
     borderColor: 'white',
     height: 40,
@@ -175,5 +278,9 @@ const styles = StyleSheet.create({
     flex: 1,
     position: 'absolute',
     top: 150,
+  },
+  view: {
+    justifyContent: 'flex-end',
+    margin: 0,
   },
 });

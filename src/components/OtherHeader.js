@@ -7,12 +7,9 @@ const OtherHeader = () => {
     <View style={styles.container}>
       <View
         style={{
-          justifyContent: 'center',
-          width: '60%',
+          width: '38%',
         }}>
-        <Text style={{fontWeight: 'bold', fontSize: 22, marginLeft: 10}}>
-          Khác
-        </Text>
+        <Text style={{fontWeight: 'bold', fontSize: 22}}>Khác</Text>
       </View>
 
       <View
@@ -62,7 +59,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
 
     flex: 1,
-    justifyContent: 'center',
+
     alignItems: 'center',
   },
 });

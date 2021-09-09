@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -21,15 +22,15 @@ import SignInScreen from './src/screens/SignInScreen';
 
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+function Home1() {
   return (
     <Tab.Navigator
-      initialRouteName="Chào bạn mới"
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: 'orange',
       }}>
       <Tab.Screen
-        name="Chào bạn mới"
+        name="Home"
         component={HomeScreen}
         options={{
           tabBarLabel: 'Trang chủ',
@@ -51,7 +52,7 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Cửa hàng"
+        name="Store"
         component={StoreScreen}
         options={{
           headerTitle: props => <StoreHeader {...props} />,
@@ -66,7 +67,7 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Bag"
+        name="Point"
         component={PointScreen}
         options={{
           headerTitle: props => <PointHeader {...props} />,
@@ -79,26 +80,16 @@ function MyTabs() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Khác"
+      {/* <Tab.Screen
+        name="Other"
         component={OtherScreen}
-        options={{
-          headerTitle: props => <OtherHeader {...props} />,
-          tabBarLabel: 'Khác',
-          tabBarIcon: ({color, size}) => (
-            <Ionicons
-              name="ios-reorder-three"
-              color={color}
-              size={size}></Ionicons>
-          ),
-        }}
-      />
+        
+      /> */}
       <Tab.Screen
-        name="SignIN"
+        name="SignIn"
         component={SignInScreen}
         options={{
-          headerTitle: props => <OtherHeader {...props} />,
-          tabBarLabel: 'sign',
+          tabBarLabel: 'Khác',
           tabBarIcon: ({color, size}) => (
             <Ionicons
               name="ios-reorder-three"
@@ -111,10 +102,24 @@ function MyTabs() {
   );
 }
 
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home1"
+          component={Home1}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Other"
+          component={OtherScreen}
+          options={{
+            headerTitle: props => <OtherHeader {...props} />,
+          }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
